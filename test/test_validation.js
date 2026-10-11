@@ -93,6 +93,8 @@ describe('sprintfjs', function() {
     })
 
     it('should preserve zero precision for non-numeric specifiers', function() {
+        assert.equal(sprintf('%.0e', 1.25), '1e+0')
+        assert.equal(sprintf('%.0f', 1.25), '1')
         assert.equal(sprintf('%.0s', 'text'), '')
         assert.equal(sprintf('%.0t', true), '')
         assert.equal(sprintf('%.0T', true), '')
